@@ -14,3 +14,16 @@ GDAL supported image conversion into zoom level 16 Web Mercator compatible grid 
 - Suported image data source format: rely on supported GDAL formats (check it with gdalinfo --formats)
 - Require quite large temporary space during processing: projected image, tile image folder etc
 - Might not be the most effective nor the fastest way, suggestions/contributions welcome
+
+## Usage
+Availabe options:
+-f / --file: the source image file, eg. mylarge.tif
+-o / --output-dir: the target folder, for *.mbtiles result temporary created files
+-t / --image-type: the target image type: PNG (true color PNG), PNG8 (for 8 bit PNG), JPEG
+-q / --quality: JPEG quality setting (eg 70, 75, 90), only applied to -t JPEG
+-sz / --start-zoom: starting zoom level (16 by default)
+-ez / --end-zoom: end zoom level (21 by default)
+-p / --processors: number of core allocated for processing
+
+Examples:
+gd2mbt -f mylargefile.tif -t JPEG -q 70 -sz 16 -ez 20 -o ./output
