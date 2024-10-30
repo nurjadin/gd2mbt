@@ -17,6 +17,7 @@ GDAL supported image conversion into zoom level 16 Web Mercator compatible grid 
 
 ## Usage
 Availabe options:
+``` bash
 -f / --file: the source image file, eg. mylarge.tif
 -o / --output-dir: the target folder, for *.mbtiles result temporary created files
 -t / --image-type: the target image type: PNG (true color PNG), PNG8 (for 8 bit PNG), JPEG
@@ -24,6 +25,9 @@ Availabe options:
 -sz / --start-zoom: starting zoom level (16 by default)
 -ez / --end-zoom: end zoom level (21 by default)
 -p / --processors: number of core allocated for processing
+```
 
 Examples:
+``` bash
 gd2mbt -f mylargefile.tif -t JPEG -q 70 -sz 16 -ez 20 -o ./output
+```
